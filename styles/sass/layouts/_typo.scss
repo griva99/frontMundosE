@@ -1,0 +1,69 @@
+/*Tipografia, color y demas decoración solo de texto*/
+.fuente_menu, button, .texto_carousel {
+    font-family: $tipografia-roboto;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: medium;
+    opacity: 1;
+    text-align: left;
+}
+
+.segundo_carousel_texto1, .accordion_titulo, .formulario_globo__content__form, .formulario_globo__content__form__contact {
+    font-family: $tipografia-roboto;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: medium;
+    opacity: 1;
+    text-align: left;
+    letter-spacing: .22px;
+}
+.segundo_carousel_texto1, .segundo_carousel_texto2{
+    color:$color-texto
+}
+.section2__texto, .segundo_carousel_texto2, .accordion_texto, .pie-pagina__p5 {
+    font-family: $tipografia-roboto;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: normal;
+    opacity: 1;
+    text-align: left;
+    letter-spacing: .22px;
+}
+.titulo_carousel {
+    font-family: $tipografia-poppin;
+    font-size: 48px;
+    font-weight: 600;
+    opacity: 1;
+    text-align: left;
+    letter-spacing: .67px;
+    color: $color-texto;
+}
+.segundo_carousel_titulo{
+    font-family: $tipografia-poppin;
+    font-size: 39px;
+    font-weight: medium;
+    letter-spacing: .55px;
+    color:$color-texto
+
+}
+.formulario_globo__content__h4{
+    font-family: $tipografia-poppin;
+    font-size: 39px;
+    font-weight: medium;
+    letter-spacing: .55px;
+    color: #343434;
+}
+.section2__titulo {
+    font-family: $tipografia-poppin;
+    font-size: 39px;
+    font-weight: bold;
+    opacity: 1;
+    color: #343434;
+    letter-spacing: .55px;
+}
+span{
+    color: #E0752F;
+}
+.pie-pagina__p5{
+    color: #DCE1DA;
+}

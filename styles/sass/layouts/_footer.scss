@@ -1,0 +1,18 @@
+.pie-pagina{
+    background-color: $color-fondo;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    .pie-pagina__p5{
+        margin-top: 3%;
+    }
+    @media (max-width: 1024px){
+        .pie-pagina__p5{
+            margin-top: 5%;
+        }
+    }
+}

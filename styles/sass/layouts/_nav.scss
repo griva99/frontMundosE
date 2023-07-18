@@ -1,0 +1,17 @@
+.contenedor-menu{
+    border-bottom: 1px solid $color-naranja;
+    padding-left: 8%;
+    .nav_menu{
+        display: flex;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        .nav_menu_link{
+            padding-right: 15%;
+            .fuente_menu{
+                padding-right: 8%;
+            }
+        }
+
+    }
+    
+}
