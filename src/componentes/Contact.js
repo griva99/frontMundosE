@@ -1,6 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
 import "./css/index.css";
 function Contact(){
+    const [data, setData] = useState(null);
+    const guardarContanto = (nombre,correo,telefono,mensaje) =>{
+        const url = "http://localhost:8000/contactos"
+        fetch(url,{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+              },
+            body: JSON.stringify({
+                nombre: nombre,
+                correo: correo,
+                telefono: telefono,
+                mensaje:mensaje,
+
+            })
+        })
+        .then(response => response.json())
+        .then(json => {
+            console.log("json",json)
+            setData(json)
+        }).catch(err => {
+            console.log("e",err)
+        })
+    }
+    const enviarCorreo = (nombre,correo,mensaje) =>{
+        console.log("Datos a enviar:", nombre,",", correo,",", mensaje);
+        const url = "http://localhost:8000/contact"
+        fetch(url,{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+              },
+            body: JSON.stringify({
+                nombre: nombre,
+                email: correo,
+                message:mensaje,
+
+            })
+        })
+        .then(response => response.json())
+        .then(json => {
+            console.log("Respuesta del servidor:", json);
+            setData(json)
+        }).catch(err => {
+            console.log("Error al enviar la solicitud:", err)
+        })
+    }
+    const handleEnviar = () => {
+        // Obtén los valores de los campos
+        const nombre = document.getElementById("name").value;
+        const correo = document.getElementById("email").value;
+        const telefono = document.getElementById("phone").value;
+        const mensaje = document.getElementById("message").value;
+        //console.log(nombre, correo, telefono, mensaje)
+        // Llama a la función guardarContanto con los valores
+        guardarContanto(nombre, correo, telefono, mensaje);
+        enviarCorreo(nombre, correo, mensaje);
+      };
     return(
         <div class="formulario_globo">
                 <div class="formulario_globo__form" id="contact">
@@ -25,7 +83,7 @@ function Contact(){
                                     <textarea class="formulario_globo__content__textarea" id="message"></textarea>
                                 </div>
                                 <div class="formulario_globo__content__boton">
-                                    <button type="button" class="button_send">Send</button>
+                                    <button type="button" class="button_send" onClick={handleEnviar}>Send</button>
                                 </div>
                             </form>
                         </div>
@@ -33,7 +91,7 @@ function Contact(){
                         <image src="./imagen/contact.png" alt="contacto"/>
                     </div>
                     </div>
-                    
+
                 </div>
             </div>
     );
